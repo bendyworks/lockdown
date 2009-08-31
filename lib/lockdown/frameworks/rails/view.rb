@@ -29,6 +29,7 @@ module Lockdown
           method = html_options ? html_options[:method] : :get
 
           if authorized?(url, method)
+            html_options ||= {}
             return button_to_open(name, url, html_options)
           end
           return ""
